@@ -41,6 +41,13 @@ var user = {
     age: 35,
     location: 'Bengaluru'
 };
+
+function getLocation(location) {
+    if (location) {
+        return location;
+    }
+    return 'Unknown';
+}
 var templateTwo = React.createElement(
     'div',
     null,
@@ -59,10 +66,10 @@ var templateTwo = React.createElement(
         'p',
         null,
         'Location: ',
-        user.location
+        getLocation(user.location)
     )
 );
 
 // Root under which the JSX is rendered.
 var app = document.getElementById("app");
-ReactDOM.render(template, app);
+ReactDOM.render(templateTwo, app);
