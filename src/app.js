@@ -6,7 +6,7 @@ const app = {
     subtitle: 'Put your life in the hands of a computer',
     options: []
 }
-const submitForm = (e) => {
+const onSubmitForm = (e) => {
     e.preventDefault();
     const option = e.target.elements.option.value;
     if ( option ) {
@@ -16,6 +16,10 @@ const submitForm = (e) => {
     }
 };
 
+const onRemoveAll = ()=> {
+    app.options = [];
+    renderTemplate();
+}
 
 // Root under which the JSX is rendered.
 const appRoot = document.getElementById("app");
@@ -27,12 +31,13 @@ const renderTemplate = () => {
             { app.subtitle && <p>{ app.subtitle }</p> }
             <p>{ app.options && app.options.length > 0?'Here are your options':'No options' }</p>
             <p>{ app.options.length }</p>
+            <button onClick={onRemoveAll}>Remove All</button>
             <ol>
                 <li>Item one</li>
                 <li>Item two</li>
             </ol>
 
-            <form onSubmit={submitForm}>
+            <form onSubmit={onSubmitForm}>
                 <input type="text" name="option" />
                 <button type="submit">Add Option</button>
             </form>

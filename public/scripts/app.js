@@ -8,7 +8,7 @@ var app = {
     subtitle: 'Put your life in the hands of a computer',
     options: []
 };
-var submitForm = function submitForm(e) {
+var onSubmitForm = function onSubmitForm(e) {
     e.preventDefault();
     var option = e.target.elements.option.value;
     if (option) {
@@ -16,6 +16,11 @@ var submitForm = function submitForm(e) {
         e.target.elements.option.value = '';
         renderTemplate();
     }
+};
+
+var onRemoveAll = function onRemoveAll() {
+    app.options = [];
+    renderTemplate();
 };
 
 // Root under which the JSX is rendered.
@@ -46,6 +51,11 @@ var renderTemplate = function renderTemplate() {
             app.options.length
         ),
         React.createElement(
+            'button',
+            { onClick: onRemoveAll },
+            'Remove All'
+        ),
+        React.createElement(
             'ol',
             null,
             React.createElement(
@@ -61,7 +71,7 @@ var renderTemplate = function renderTemplate() {
         ),
         React.createElement(
             'form',
-            { onSubmit: submitForm },
+            { onSubmit: onSubmitForm },
             React.createElement('input', { type: 'text', name: 'option' }),
             React.createElement(
                 'button',
