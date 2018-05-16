@@ -2,18 +2,23 @@
 
 console.log("This is from app.js");
 
+// JSX
+var app = {
+    title: 'This is the title',
+    subtitle: 'This is subtitle'
+};
 var template = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'This is from jsx file'
+        app.title
     ),
     React.createElement(
         'p',
         null,
-        'this is some info'
+        app.subtitle
     ),
     React.createElement(
         'ol',
@@ -59,4 +64,4 @@ var templateTwo = React.createElement(
 );
 
 var app = document.getElementById("app");
-ReactDOM.render(templateTwo, app);
+ReactDOM.render(template, app);

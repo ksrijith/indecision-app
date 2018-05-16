@@ -1,9 +1,14 @@
 console.log("This is from app.js");
 
+// JSX
+var app = {
+    title: 'This is the title',
+    subtitle: 'This is subtitle'
+}
 var template = (
     <div>
-        <h1>This is from jsx file</h1>
-        <p>this is some info</p>
+        <h1>{ app.title }</h1>
+        <p>{ app.subtitle }</p>
         <ol>
             <li>Item one</li>
             <li>Item two</li>
@@ -25,4 +30,4 @@ var templateTwo = (
 );
 
 var app = document.getElementById("app");
-ReactDOM.render(templateTwo, app);
+ReactDOM.render(template, app);
