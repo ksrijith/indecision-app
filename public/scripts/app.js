@@ -41,51 +41,7 @@ var template = React.createElement(
         )
     )
 );
-
-var count = 0;
-var addOne = function addOne() {
-    count++;
-    renderTemplate();
-};
-var minusOne = function minusOne() {
-    count--;
-    renderTemplate();
-};
-var reset = function reset() {
-    count = 0;
-    renderTemplate();
-};
-
 // Root under which the JSX is rendered.
 var appRoot = document.getElementById("app");
 
-var renderTemplate = function renderTemplate() {
-    var templateTwo = React.createElement(
-        'div',
-        null,
-        React.createElement(
-            'h1',
-            null,
-            'Count: ',
-            count
-        ),
-        React.createElement(
-            'button',
-            { className: 'button', onClick: addOne },
-            '+1'
-        ),
-        React.createElement(
-            'button',
-            { className: 'button', onClick: minusOne },
-            '-1'
-        ),
-        React.createElement(
-            'button',
-            { className: 'button', onClick: reset },
-            'Reset'
-        )
-    );
-    ReactDOM.render(templateTwo, appRoot);
-};
-
-renderTemplate();
+ReactDOM.render(template, appRoot);
