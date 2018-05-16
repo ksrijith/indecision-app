@@ -11,7 +11,7 @@ const user = {
         'Waukesha',
         'Tokyo'
     ],
-    printPlacesLived: function () {
+    printPlacesLived () {
         this.cities.forEach((city) => {
             console.log(this.name + ' has lived in: ' + city);
         });
