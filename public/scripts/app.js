@@ -4,8 +4,8 @@ console.log("This is from app.js");
 
 // JSX
 var app = {
-    title: 'This is the title',
-    subtitle: 'This is subtitle'
+    title: 'Indecision App',
+    subtitle: 'Put your life in the hands of a computer'
 };
 var template = React.createElement(
     'div',
@@ -63,5 +63,6 @@ var templateTwo = React.createElement(
     )
 );
 
+// Root under which the JSX is rendered.
 var app = document.getElementById("app");
 ReactDOM.render(template, app);
