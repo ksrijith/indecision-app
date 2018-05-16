@@ -21,25 +21,25 @@ const template = (
     </div>
 );
 
-const user = {
-    name: 'Srijith Kartha',
-    age: 35,
-    location: 'Bengaluru'
-};
-
-function getLocation(location) {
-    if ( location ) {
-        return <p>Location: { location }</p>;
-    }
+let count = 0;
+const addOne = () => {
+    console.log("add 1")
+}
+const minusOne = () => {
+    console.log("minus 1")
+}
+const reset = () => {
+    console.log("reset")
 }
 const templateTwo = (
     <div>
-        <h1>{ user.name ? user.name : 'Anonymous' }</h1>
-        { user.age && user.age >= 18 && <p>Age: { user.age }</p> }
-        { getLocation(user.location) }
+        <h1>Count: {count}</h1>
+        <button className="button" onClick={ addOne }>+1</button>
+        <button className="button" onClick={ minusOne }>-1</button>
+        <button className="button" onClick={ reset }>Reset</button>
     </div>
 );
-
+console.log(templateTwo);
 // Root under which the JSX is rendered.
 const appRoot = document.getElementById("app");
-ReactDOM.render(template, appRoot);
+ReactDOM.render(templateTwo, appRoot);
