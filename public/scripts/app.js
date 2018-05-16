@@ -1,25 +1,21 @@
 'use strict';
 
-// console.log('es6-arrow-playground');
-
-// const square = function(x) {
-//     return x * x;
-// };
-
-// const squareArrow = (x) => {
-//     return x * x;
-// };
-
-// const squareArrowShort = (x) => x * x;
-
-// console.log(squareArrowShort(10));
-
-var name = "Mike Smith";
-var getFirstName = function getFirstName(name) {
-    return name.split(' ')[0];
-};
-var getFirstNameShort = function getFirstNameShort(name) {
-    return name.split(' ')[0];
+var add = function add(a, b) {
+    return a + b;
 };
 
-console.log(getFirstNameShort(name));
+console.log(add(55, 1, 1000));
+
+var user = {
+    name: 'Srijith',
+    cities: ['Bengaluru', 'Waukesha', 'Tokyo'],
+    printPlacesLived: function printPlacesLived() {
+        var _this = this;
+
+        this.cities.forEach(function (city) {
+            console.log(_this.name + ' has lived in: ' + city);
+        });
+    }
+};
+
+user.printPlacesLived();
