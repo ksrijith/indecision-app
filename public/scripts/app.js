@@ -1,56 +1,62 @@
-"use strict";
+'use strict';
 
 console.log("This is from app.js");
 
 var template = React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-        "h1",
+        'h1',
         null,
-        "This is from jsx file"
+        'This is from jsx file'
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "this is some info"
+        'this is some info'
     ),
     React.createElement(
-        "ol",
+        'ol',
         null,
         React.createElement(
-            "li",
+            'li',
             null,
-            "Item one"
+            'Item one'
         ),
         React.createElement(
-            "li",
+            'li',
             null,
-            "Item two"
+            'Item two'
         )
     )
 );
 
-var app = document.getElementById("app");
-
+var user = {
+    name: 'Srijith Kartha',
+    age: 35,
+    location: 'Bengaluru'
+};
 var templateTwo = React.createElement(
-    "div",
+    'div',
     null,
     React.createElement(
-        "h1",
+        'h1',
         null,
-        "Srijith Kartha"
+        user.name
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "Age: 35"
+        'Age: ',
+        user.age
     ),
     React.createElement(
-        "p",
+        'p',
         null,
-        "Location: Bengaluru"
+        'Location: ',
+        user.location
     )
 );
 
+var app = document.getElementById("app");
 ReactDOM.render(templateTwo, app);

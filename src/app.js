@@ -11,14 +11,18 @@ var template = (
     </div>
 );
 
-var app = document.getElementById("app");
-
+var user = {
+    name: 'Srijith Kartha',
+    age: 35,
+    location: 'Bengaluru'
+}
 var templateTwo = (
     <div>
-        <h1>Srijith Kartha</h1>
-        <p>Age: 35</p>
-        <p>Location: Bengaluru</p>
+        <h1>{ user.name }</h1>
+        <p>Age: { user.age }</p>
+        <p>Location: { user.location }</p>
     </div>
 );
 
+var app = document.getElementById("app");
 ReactDOM.render(templateTwo, app);
