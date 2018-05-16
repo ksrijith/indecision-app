@@ -21,4 +21,18 @@ var user = {
     }
 };
 
-user.printPlacesLived();
+//user.printPlacesLived();
+
+var multiplier = {
+    numbers: [1, 2, 3, 4, 5],
+    multiplyBy: 2,
+    multiply: function multiply() {
+        var _this2 = this;
+
+        return this.numbers.map(function (number) {
+            return _this2.multiplyBy * number;
+        });
+    }
+};
+
+console.log(multiplier.multiply());
