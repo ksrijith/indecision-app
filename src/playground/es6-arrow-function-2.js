@@ -12,9 +12,7 @@ const user = {
         'Tokyo'
     ],
     printPlacesLived () {
-        const cityMessages = this.cities.map((city) => {
-            return this.name + ' has lived in: ' + city;
-        });
+        const cityMessages = this.cities.map((city) => this.name + ' has lived in: ' + city);
         cityMessages.forEach((cityMessage) => {
             console.log(cityMessage);
         });
@@ -22,3 +20,4 @@ const user = {
 };
 
 user.printPlacesLived();
+
