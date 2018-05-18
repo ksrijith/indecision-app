@@ -21,6 +21,12 @@ const onRemoveAll = ()=> {
     renderTemplate();
 }
 
+const onMakeDecision = () => {
+    const randomNum = Math.floor(Math.random() * app.options.length);
+    alert(randomNum);
+    const option = app.option[randomNum];
+};
+
 // Root under which the JSX is rendered.
 const appRoot = document.getElementById("app");
 
@@ -30,14 +36,12 @@ const renderTemplate = () => {
             <h1>{ app.title }</h1>
             { app.subtitle && <p>{ app.subtitle }</p> }
             <p>{ app.options && app.options.length > 0?'Here are your options':'No options' }</p>
-            <p>{ app.options.length }</p>
+            <button disabled={ app.options.length===0 } onClick={onMakeDecision}>What should I do?</button>
             <button onClick={onRemoveAll}>Remove All</button>
 
             <ol>
             {
-                app.options.map((option, index) => {
-                    return <li key={ index }>{ option }</li>;
-                })
+                app.options.map((option, index) => <li key={ index }>{ option }</li>)
             }
             </ol>
 
