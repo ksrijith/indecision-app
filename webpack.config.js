@@ -19,6 +19,11 @@ module.exports = {
             }
         ]
     },
-    devtool: 'cheap-module-eval-source-map'
+    devtool: 'cheap-module-eval-source-map',
+    devServer: {
+        contentBase: path.join(__dirname, 'public'),
+        port: "3300",
+        host: "0.0.0.0"
+    }
 };
 
