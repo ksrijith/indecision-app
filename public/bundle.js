@@ -76,8 +76,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 console.log('app.js is running');
-console.log('sq:' + __WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* square */](4));
+console.log('sq:' + __WEBPACK_IMPORTED_MODULE_0__utils_js__["c" /* square */](4));
 console.log('add:' + __WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* add */](4, 2));
+console.log('subtract:' + __WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* default */](4, 2));
 
 console.log('isAdult:' + __WEBPACK_IMPORTED_MODULE_1__person_js__["b" /* isAdult */](15));
 console.log('isAdult:' + __WEBPACK_IMPORTED_MODULE_1__person_js__["b" /* isAdult */](18));
@@ -87,6 +88,8 @@ console.log('canDrink:' + __WEBPACK_IMPORTED_MODULE_1__person_js__["a" /* canDri
 console.log('canDrink:' + __WEBPACK_IMPORTED_MODULE_1__person_js__["a" /* canDrink */](21));
 console.log('canDrink:' + __WEBPACK_IMPORTED_MODULE_1__person_js__["a" /* canDrink */](30));
 
+
+
 /***/ }),
 /* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -95,16 +98,21 @@ console.log('canDrink:' + __WEBPACK_IMPORTED_MODULE_1__person_js__["a" /* canDri
 console.log('utils.js is running');
 
 const square = (x) => (x * x);
-/* harmony export (immutable) */ __webpack_exports__["b"] = square;
+/* harmony export (immutable) */ __webpack_exports__["c"] = square;
 
 const add = (a, b) => (a + b);
 /* harmony export (immutable) */ __webpack_exports__["a"] = add;
 
 
+/* harmony default export */ __webpack_exports__["b"] = ((a, b) => a - b);
+
+
 // export {
 //     square,
-//     add
+//     add,
+//     subtract as default
 // };
+
 
 /***/ }),
 /* 2 */,
